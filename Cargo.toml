@@ -1,0 +1,18 @@
+[package]
+name = "youtube-dl-repl"
+version = "0.0.0-alpha.1"
+authors = ["Piotr Bajdek <piotr.bajdek@proton.me>"]
+edition = "2021"
+description = "[UNDER CONSTRUCTION / RESERVED NAME]"
+readme = "README.md"
+repository = "https://github.com/piotrbajdek/youtube-dl-repl"
+license = "MIT"
+
+[profile.release]
+codegen-units = 1
+strip = true
+
+[package.metadata.generate-rpm]
+assets = [
+{ source = "target/release/youtube-dl-repl", dest = "/usr/bin/youtube-dl-repl", mode = "755" }
+]
