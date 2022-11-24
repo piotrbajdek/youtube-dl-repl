@@ -1,12 +1,14 @@
 [package]
 name = "youtube-dl-repl"
-version = "0.0.0-alpha.1"
+version = "1.0.0-alpha.1"
 authors = ["Piotr Bajdek <piotr.bajdek@proton.me>"]
 edition = "2021"
-description = "[UNDER CONSTRUCTION / RESERVED NAME]"
+description = "a frontend for youtube-dl providing a REPL mode"
 readme = "README.md"
 repository = "https://github.com/piotrbajdek/youtube-dl-repl"
 license = "MIT"
+keywords = ["download", "downloader", "youtube", "youtube-dl", "video"]
+categories = ["command-line-utilities", "multimedia", "network-programming"]
 
 [profile.release]
 codegen-units = 1
