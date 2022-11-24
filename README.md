@@ -14,7 +14,7 @@
 
 [youtube-dl-repl](https://github.com/piotrbajdek/youtube-dl-repl) (in Rust) requires [youtube-dl](https://github.com/ytdl-org/youtube-dl) (in Python) to be installed on the system as a dependency. Note that to make them work together you need to perform a separate installation of [youtube-dl](https://github.com/ytdl-org/youtube-dl) e.g., from your Linux distro's repositories.
 
-youtube-dl-repl v1.0.0-alpha.1:
+youtube-dl-repl v1.0.0:
 
 – Was successfully tested on Arch Linux, Fedora Linux 37, openSUSE Tumbleweed, Ubuntu 22.04 and Ubuntu 22.10.
 
@@ -26,7 +26,7 @@ youtube-dl-repl v1.0.0-alpha.1:
 
 **1.** Install from crates.io by the use of cargo:
 
-_cargo install youtube-dl-repl \--version 1.0.0-alpha.1_
+_cargo install youtube-dl-repl_
 
 By default, the file will be downloaded to `.cargo/bin/`, a hidden folder in your home directory.
 
@@ -36,7 +36,7 @@ By default, the file will be downloaded to `.cargo/bin/`, a hidden folder in you
 
 ## METHOD 2 – LINUX UNIVERSAL BINARIES
 
-**1.** Download the distro-independent [binary](https://github.com/piotrbajdek/youtube-dl-repl/releases/download/v1.0.0-alpha.1/youtube-dl-repl) of youtube-dl-repl from GitHub.
+**1.** Download the distro-independent [binary](https://github.com/piotrbajdek/youtube-dl-repl/releases/download/v1.0.0/youtube-dl-repl) of youtube-dl-repl from GitHub.
 
 **2.** Make the file executable:
 
@@ -54,22 +54,22 @@ _sudo cp youtube-dl-repl /var/usrlocal/bin/_
 
 **[recommended for most users]**
 
-Distro-specific packages are also available for download for [.rpm](https://github.com/piotrbajdek/youtube-dl-repl/releases/download/v1.0.0-alpha.1/youtube-dl-repl-1.0.0-alpha.1-1.x86_64.rpm)- and [.deb](https://github.com/piotrbajdek/youtube-dl-repl/releases/download/v1.0.0-alpha.1/youtube-dl-repl_1.0.0-alpha.1_amd64.deb)-based Linux distros. Installation instructions:
+Distro-specific packages are also available for download for [.rpm](https://github.com/piotrbajdek/youtube-dl-repl/releases/download/v1.0.0/youtube-dl-repl-1.0.0-1.x86_64.rpm)- and [.deb](https://github.com/piotrbajdek/youtube-dl-repl/releases/download/v1.0.0/youtube-dl-repl_1.0.0_amd64.deb)-based Linux distros. Installation instructions:
 
 Fedora Linux / RHEL / openSUSE:
 
-_sudo rpm -i youtube-dl-repl-1.0.0-alpha.1-1.x86_64.rpm_
+_sudo rpm -i youtube-dl-repl-1.0.0-1.x86_64.rpm_
 
 Fedora Silverblue / Kinoite:
 
-_rpm-ostree install youtube-dl-repl-1.0.0-alpha.1-1.x86_64.rpm_
+_rpm-ostree install youtube-dl-repl-1.0.0-1.x86_64.rpm_
 
 Ubuntu:
 
-_sudo dpkg -i youtube-dl-repl_1.0.0-alpha.1_amd64.deb_
+_sudo dpkg -i youtube-dl-repl_1.0.0_amd64.deb_
 
 ## METHOD 4 – MANUAL COMPILATION
 
-Download and unpack the youtube-dl-repl [source](https://github.com/piotrbajdek/youtube-dl-repl/archive/refs/tags/v1.0.0-alpha.1.zip) from GitHub. Then, build and install the program:
+Download and unpack the youtube-dl-repl [source](https://github.com/piotrbajdek/youtube-dl-repl/archive/refs/tags/v1.0.0.zip) from GitHub. Then, build and install the program:
 
 _cargo build \--release && sudo cp target/release/youtube-dl-repl /usr/bin/_

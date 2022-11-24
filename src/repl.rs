@@ -1,4 +1,4 @@
-// YOUTUBE-DL-REPL VERSION 1.0.0-ALPHA.1 / MIT LICENSE © 2022 PIOTR BAJDEK
+// YOUTUBE-DL-REPL VERSION 1.0.0 / MIT LICENSE © 2022 PIOTR BAJDEK
 
 // MODULE REPL
 
@@ -15,7 +15,7 @@ use std::process::Command;
 
 // HELP
 
-fn help(reset: &str, blue_underlined: &str, cyan: &str, yellow: &str) {
+fn help(reset: &str, blue_underlined: &str, red: &str, cyan: &str, yellow: &str) {
     println!("{}", cyan.to_owned() + "youtube-dl-repl" + reset + " source and documentation:");
     println!();
     println!("{}", blue_underlined.to_owned() + "https://github.com/piotrbajdek/youtube-dl-repl" + reset);
@@ -25,7 +25,7 @@ fn help(reset: &str, blue_underlined: &str, cyan: &str, yellow: &str) {
     println!("Provide youtube-dl options as youtube-dl-repl command-line arguments");
     println!("Next, you will be asked for the URL in the interactive shell mode...");
     println!();
-    println!("Example: {}", yellow.to_owned() + "youtube-dl-repl -f 140" + reset);
+    println!("Example: {}", yellow.to_owned() + "youtube-dl-repl -f 140" + reset + "        [" + red + "NOTE" + reset + ": do not insert any URL]");
     println!();
     println!("{}", cyan.to_owned() + "youtube-dl" + reset + " help:");
     println!();
@@ -53,15 +53,34 @@ fn license(reset: &str, yellow: &str) {
 
 pub fn interactive(reset: &str, blue_underlined: &str, red: &str, cyan: &str, yellow: &str) {
     let args: Vec<String> = env::args().collect();
+
+    for argument in env::args() {
+        if argument.starts_with("http") {
+            println!("{}", red.to_owned() + "ERROR: Incorrect arguments provided: Detected a URL" + reset);
+            println!();
+            println!("{}", cyan.to_owned() + "youtube-dl-repl" + reset + " source and documentation:");
+            println!();
+            println!("{}", blue_underlined.to_owned() + "https://github.com/piotrbajdek/youtube-dl-repl" + reset);
+            println!();
+            println!("{}", cyan.to_owned() + "youtube-dl-repl" + reset + " help:");
+            println!();
+            println!("Provide youtube-dl options as youtube-dl-repl command-line arguments");
+            println!("Next, you will be asked for the URL in the interactive shell mode...");
+            println!();
+            println!("Example: {}", yellow.to_owned() + "youtube-dl-repl -f 140" + reset + "        [" + red + "NOTE" + reset + ": do not insert any URL]");
+            return;
+        }
+    }
+
     let arg_cnt = args.len();
 
     if arg_cnt == 1 {
-        println!("{}", red.to_owned() + "Warning: no youtube-dl options provided!" + reset);
+        println!("{}", red.to_owned() + "WARNING: No youtube-dl options provided" + reset);
         println!();
         println!("Provide youtube-dl options as youtube-dl-repl command-line arguments");
         println!("Next, you will be asked for the URL in the interactive shell mode...");
         println!();
-        println!("Example: {}", yellow.to_owned() + "youtube-dl-repl -f 140" + reset);
+        println!("Example: {}", yellow.to_owned() + "youtube-dl-repl -f 140" + reset + "        [" + red + "NOTE" + reset + ": do not insert any URL]");
         println!();
     }
 
@@ -83,7 +102,7 @@ pub fn interactive(reset: &str, blue_underlined: &str, red: &str, cyan: &str, ye
             if url_to_dl == "quit" || url_to_dl == "exit" {
                 return;
             } else if url_to_dl == "help" {
-                help(reset, blue_underlined, cyan, yellow);
+                help(reset, blue_underlined, red, cyan, yellow);
                 return;
             } else if url_to_dl == "license" {
                 license(reset, yellow);
@@ -109,7 +128,7 @@ pub fn interactive(reset: &str, blue_underlined: &str, red: &str, cyan: &str, ye
             if url_to_dl == "quit" || url_to_dl == "exit" {
                 return;
             } else if url_to_dl == "help" {
-                help(reset, blue_underlined, cyan, yellow);
+                help(reset, blue_underlined, red, cyan, yellow);
                 return;
             } else if url_to_dl == "license" {
                 license(reset, yellow);
@@ -137,7 +156,7 @@ pub fn interactive(reset: &str, blue_underlined: &str, red: &str, cyan: &str, ye
             if url_to_dl == "quit" || url_to_dl == "exit" {
                 return;
             } else if url_to_dl == "help" {
-                help(reset, blue_underlined, cyan, yellow);
+                help(reset, blue_underlined, red, cyan, yellow);
                 return;
             } else if url_to_dl == "license" {
                 license(reset, yellow);
@@ -167,7 +186,7 @@ pub fn interactive(reset: &str, blue_underlined: &str, red: &str, cyan: &str, ye
             if url_to_dl == "quit" || url_to_dl == "exit" {
                 return;
             } else if url_to_dl == "help" {
-                help(reset, blue_underlined, cyan, yellow);
+                help(reset, blue_underlined, red, cyan, yellow);
                 return;
             } else if url_to_dl == "license" {
                 license(reset, yellow);
@@ -199,7 +218,7 @@ pub fn interactive(reset: &str, blue_underlined: &str, red: &str, cyan: &str, ye
             if url_to_dl == "quit" || url_to_dl == "exit" {
                 return;
             } else if url_to_dl == "help" {
-                help(reset, blue_underlined, cyan, yellow);
+                help(reset, blue_underlined, red, cyan, yellow);
                 return;
             } else if url_to_dl == "license" {
                 license(reset, yellow);
@@ -233,7 +252,7 @@ pub fn interactive(reset: &str, blue_underlined: &str, red: &str, cyan: &str, ye
             if url_to_dl == "quit" || url_to_dl == "exit" {
                 return;
             } else if url_to_dl == "help" {
-                help(reset, blue_underlined, cyan, yellow);
+                help(reset, blue_underlined, red, cyan, yellow);
                 return;
             } else if url_to_dl == "license" {
                 license(reset, yellow);
@@ -269,7 +288,7 @@ pub fn interactive(reset: &str, blue_underlined: &str, red: &str, cyan: &str, ye
             if url_to_dl == "quit" || url_to_dl == "exit" {
                 return;
             } else if url_to_dl == "help" {
-                help(reset, blue_underlined, cyan, yellow);
+                help(reset, blue_underlined, red, cyan, yellow);
                 return;
             } else if url_to_dl == "license" {
                 license(reset, yellow);
@@ -307,7 +326,7 @@ pub fn interactive(reset: &str, blue_underlined: &str, red: &str, cyan: &str, ye
             if url_to_dl == "quit" || url_to_dl == "exit" {
                 return;
             } else if url_to_dl == "help" {
-                help(reset, blue_underlined, cyan, yellow);
+                help(reset, blue_underlined, red, cyan, yellow);
                 return;
             } else if url_to_dl == "license" {
                 license(reset, yellow);
@@ -347,7 +366,7 @@ pub fn interactive(reset: &str, blue_underlined: &str, red: &str, cyan: &str, ye
             if url_to_dl == "quit" || url_to_dl == "exit" {
                 return;
             } else if url_to_dl == "help" {
-                help(reset, blue_underlined, cyan, yellow);
+                help(reset, blue_underlined, red, cyan, yellow);
                 return;
             } else if url_to_dl == "license" {
                 license(reset, yellow);
@@ -389,7 +408,7 @@ pub fn interactive(reset: &str, blue_underlined: &str, red: &str, cyan: &str, ye
             if url_to_dl == "quit" || url_to_dl == "exit" {
                 return;
             } else if url_to_dl == "help" {
-                help(reset, blue_underlined, cyan, yellow);
+                help(reset, blue_underlined, red, cyan, yellow);
                 return;
             } else if url_to_dl == "license" {
                 license(reset, yellow);
@@ -433,7 +452,7 @@ pub fn interactive(reset: &str, blue_underlined: &str, red: &str, cyan: &str, ye
             if url_to_dl == "quit" || url_to_dl == "exit" {
                 return;
             } else if url_to_dl == "help" {
-                help(reset, blue_underlined, cyan, yellow);
+                help(reset, blue_underlined, red, cyan, yellow);
                 return;
             } else if url_to_dl == "license" {
                 license(reset, yellow);

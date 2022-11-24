@@ -1,4 +1,4 @@
-// YOUTUBE-DL-REPL VERSION 1.0.0-ALPHA.1 / MIT LICENSE © 2022 PIOTR BAJDEK
+// YOUTUBE-DL-REPL VERSION 1.0.0 / MIT LICENSE © 2022 PIOTR BAJDEK
 
 // MAIN FILE
 
@@ -20,6 +20,6 @@ fn main() {
     let cyan = "\x1b[36m";
     let yellow = "\x1b[93m";
 
-    menu::documentation(reset, blue_underlined, cyan, yellow);
+    menu::documentation(reset, blue_underlined, red, cyan, yellow);
     repl::interactive(reset, blue_underlined, red, cyan, yellow);
 }
