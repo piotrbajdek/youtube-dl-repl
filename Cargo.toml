@@ -1,6 +1,6 @@
 [package]
 name = "youtube-dl-repl"
-version = "1.0.0"
+version = "1.0.1"
 authors = ["Piotr Bajdek <piotr.bajdek@proton.me>"]
 edition = "2021"
 description = "a frontend for youtube-dl providing an interactive shell mode (REPL)"
